@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>МеталлОбработка — свой склад, свой цех, счёт за 60 секунд</title>
+<meta name="description" content="Режем, гнём и варим по вашим чертежам со своего склада. Онлайн-калькулятор металлообработки с фиксацией цены, 250+ готовых запчастей, отгрузка через 2 дня.">
+<meta name="theme-color" content="#08090b">
+<meta property="og:title" content="МеталлОбработка — отдадим ваш металл в работу сегодня">
+<meta property="og:description" content="Свой склад проката, лазер 2 кВт, листогиб 100 т. Расчёт стоимости за 60 секунд, цена фиксируется в момент оплаты.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>[data-anim]{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0b0d'/%3E%3Cpath d='M14 46V18h8l12 16V18h8v28h-8L22 30v16z' fill='%23ff6a00'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ======================= BACKGROUND LAYERS ======================= -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__grid"></div>
+  <div class="bg__noise"></div>
+  <div class="orb orb--1" data-parallax="0.16"></div>
+  <div class="orb orb--2" data-parallax="-0.1"></div>
+  <div class="orb orb--3" data-parallax="0.06"></div>
+  <div class="bg__beam"></div>
+</div>
+
+<!-- ======================= HEADER ======================= -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" href="#top" aria-label="МеталлОбработка — на главную">
+      <span class="logo__mark"><i></i><i></i><i></i></span>
+      <span class="logo__text">Металл<b>Обработка</b><em>· цех и склад</em></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#calculator">Калькулятор</a>
+      <a href="#metal">Склад металла</a>
+      <a href="#parts">Запчасти</a>
+      <a href="#equipment">Оборудование</a>
+      <a href="#process">Как работаем</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+74951204567">+7 (495) 120-45-67</a>
+      <button class="icon-btn cart-btn" type="button" data-open-cart aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 4h2l2.2 10.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.55L20.5 8H6.2"/><circle cx="10" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/></svg>
+        <span class="badge" data-cart-count hidden>0</span>
+      </button>
+      <button class="btn btn--sm btn--primary js-callback" type="button">Обратный звонок</button>
+      <button class="burger" type="button" data-burger aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="header__progress" id="scrollProgress"></div>
+</header>
+
+<main id="top">
+
+<!-- ======================= HERO + CALCULATOR ======================= -->
+<section class="hero">
+  <div class="container hero__grid">
+
+    <div class="hero__left">
+      <div class="badge-pill reveal" data-anim="up">
+        <span class="dot"></span> Свой склад проката · Свой лазер 2 кВт · Свой листогиб 100 т
+      </div>
+
+      <h1 class="hero__title reveal" data-anim="mask" data-delay="80">
+        Не замораживайте оборотку.<br>
+        <span class="grad">Отдадим ваш металл в работу сегодня.</span>
+        Готовый заказ — через <span class="grad">2 дня</span>.
+      </h1>
+
+      <p class="hero__lead reveal" data-anim="up" data-delay="180">
+        Режем, гнём и варим по вашим чертежам <b>со своего склада</b>. Точный расчёт стоимости —
+        за 60 секунд в онлайн-калькуляторе. Цена, которую вы видите на экране, —
+        это цена в закрывающих документах.
+      </p>
+
+      <div class="hero__cta reveal" data-anim="up" data-delay="260">
+        <a class="btn btn--primary btn--lg" href="#calculator">
+          Открыть калькулятор
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="btn btn--ghost btn--lg js-callback" type="button">Позвонить инженеру за 3 минуты</button>
+      </div>
+
+      <div class="hero__stats reveal" data-anim="up" data-delay="340">
+        <div class="stat">
+          <b class="stat__num" data-count="2" data-suffix=" дня">0</b>
+          <span>срок отгрузки</span>
+        </div>
+        <div class="stat">
+          <b class="stat__num" data-count="60" data-suffix=" сек">0</b>
+          <span>расчёт сметы</span>
+        </div>
+        <div class="stat">
+          <b class="stat__num" data-count="250" data-suffix="+">0</b>
+          <span>запчастей в наличии</span>
+        </div>
+        <div class="stat">
+          <b class="stat__num" data-count="0.1" data-decimals="1" data-suffix=" мм">0</b>
+          <span>допуск станка</span>
+        </div>
+      </div>
+
+      <div class="hero__trust reveal" data-anim="up" data-delay="420">
+        <div class="avatar-stack" aria-hidden="true">
+          <i style="--a:#ff6a00">И</i><i style="--a:#ff9e3d">С</i><i style="--a:#ffd36e">Д</i><i style="--a:#8b93a2">А</i>
+        </div>
+        <div>
+          <div class="stars">★★★★★ <b>4.9</b></div>
+          <p>Строим производствам и частным мастерам с 2013 года. 1 800+ отгруженных заказов.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- CALCULATOR ---------- -->
+    <div class="hero__right" id="calculator">
+      <div class="calc glass reveal" data-anim="up" data-delay="120" data-tilt>
+        <div class="calc__head">
+          <div class="calc__title">
+            <h2>Калькулятор металлообработки</h2>
+            <p>Рассчитайте стоимость прямо сейчас. Без звонков и ожидания КП.</p>
+          </div>
+          <div class="calc__timer"><span class="pulse"></span> расчёт за 60 сек</div>
+        </div>
+
+        <form class="calc__form" id="calcForm" novalidate>
+          <div class="grid-2">
+            <label class="field">
+              <span class="field__label">Материал</span>
+              <select name="material" id="calcMaterial">
+                <option value="st3" selected>Ст3 (обычная)</option>
+                <option value="09g2s">09Г2С (высокопрочная)</option>
+                <option value="304">Нержавейка AISI 304</option>
+                <option value="430">Нержавейка AISI 430</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Толщина, мм</span>
+              <select name="thickness" id="calcThickness"></select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Длина детали, мм</span>
+              <input type="number" name="length" id="calcLength" value="600" min="10" max="6000" step="1" inputmode="numeric">
+            </label>
+
+            <label class="field">
+              <span class="field__label">Ширина детали, мм</span>
+              <input type="number" name="width" id="calcWidth" value="400" min="10" max="3000" step="1" inputmode="numeric">
+            </label>
+
+            <label class="field">
+              <span class="field__label">Количество, шт</span>
+              <input type="number" name="qty" id="calcQty" value="10" min="1" max="5000" step="1" inputmode="numeric">
+            </label>
+
+            <label class="field">
+              <span class="field__label">Срочность</span>
+              <select name="rush" id="calcRush">
+                <option value="0" selected>Стандарт (2 дня)</option>
+                <option value="15">Срочно, 1 день (+15%)</option>
+                <option value="30">Вчера (+30%)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="ops">
+            <span class="field__label">Операции</span>
+            <div class="ops__row">
+              <label class="switch">
+                <input type="checkbox" name="op" value="laser" checked>
+                <i></i><span>Лазерный рез</span><em data-rate="laser"></em>
+              </label>
+              <label class="switch">
+                <input type="checkbox" name="op" value="plasma">
+                <i></i><span>Плазма / газ</span><em data-rate="plasma"></em>
+              </label>
+              <label class="switch">
+                <input type="checkbox" name="op" value="bend">
+                <i></i><span>Гибка на прессе</span><em data-rate="bend"></em>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <label class="field">
+              <span class="field__label">Длина реза, мм <small>(оценка по периметру)</small></span>
+              <input type="number" name="cut" id="calcCut" value="2000" min="0" max="500000" step="10" inputmode="numeric">
+            </label>
+            <label class="field">
+              <span class="field__label">Гибов на деталь, шт</span>
+              <input type="number" name="bends" id="calcBends" value="4" min="0" max="64" step="1" inputmode="numeric">
+            </label>
+          </div>
+
+          <div class="drop" id="calcDrop" data-drop>
+            <input type="file" id="calcFile" accept=".dxf,.dwg,.pdf,.step,.stp" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>
+            <div class="drop__txt">
+              <b>Прикрепите чертёж</b>
+              <span>Перетащите файл или нажмите — .dxf, .dwg, .pdf, .step</span>
+            </div>
+            <span class="drop__file" id="calcFileName" hidden></span>
+          </div>
+
+          <div class="calc__result" id="calcResult" aria-live="polite">
+            <div class="calc__breakdown" id="calcBreakdown"></div>
+            <div class="calc__total">
+              <span>Итого за <span data-qty>10</span> шт</span>
+              <b id="calcTotal">0 ₽</b>
+            </div>
+          </div>
+
+          <div class="calc__foot">
+            <div class="grid-2">
+              <label class="field field--email">
+                <span class="field__label">Куда прислать PDF-смету</span>
+                <input type="email" name="email" id="calcEmail" placeholder="ivan@company.ru" autocomplete="email">
+              </label>
+              <label class="field">
+                <span class="field__label">Телефон <small>(необязательно)</small></span>
+                <input type="tel" name="phone" id="calcPhone" placeholder="+7 (___) ___-__-__" data-mask="phone" autocomplete="tel">
+              </label>
+            </div>
+            <button class="btn btn--primary btn--lg btn--block" type="submit" id="calcSubmit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5"/><path d="M4 18v1.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V18"/></svg>
+              Получить PDF-смету на почту
+            </button>
+            <p class="micro">Калькулятор учитывает стоимость материала, длину реза, количество ударов гиба и наладку. Итоговая цена в PDF — финальная.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span>листайте</div>
+</section>
+
+<!-- ======================= PAINS ======================= -->
+<section class="section pains" id="pains">
+  <div class="container">
+    <div class="section__head reveal" data-anim="up">
+      <span class="eyebrow">Как решаются эти боли</span>
+      <h2 class="section__title">Вы тратите деньги, пока поставщик обещает «завтра»</h2>
+      <p class="section__sub">Три типовые ситуации производственника — и что мы делаем вместо них.</p>
+    </div>
+
+    <div class="pains__grid">
+
+      <article class="pain glass reveal" data-anim="up" data-delay="0" data-spotlight>
+        <div class="pain__num">01</div>
+        <div class="pain__block">
+          <h3 class="pain__bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v5m0 3.5v.5"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Боль</h3>
+          <p class="pain__quote">«Поставщик обещал <b>сегодня</b>, но машина до сих пор не вышла»</p>
+        </div>
+        <div class="pain__arrow"><span></span></div>
+        <div class="pain__block pain__block--fix">
+          <h3 class="pain__good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Решение</h3>
+          <h4>Свой склад металла</h4>
+          <p>Ходовой лист <b>Ст3, 09Г2С</b>, уголок и трубу не нужно ждать — они лежат в тоннах на соседней полке. Как только вы нажимаете «Оплатить» в калькуляторе или подтверждаете заказ по телефону, наш кладовщик берёт лист и несёт его в цех.</p>
+          <ul class="pain__list">
+            <li>Никаких логистических разрывов</li>
+            <li>Запуск в работу — в день обращения</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pain glass reveal" data-anim="up" data-delay="120" data-spotlight>
+        <div class="pain__num">02</div>
+        <div class="pain__block">
+          <h3 class="pain__bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v5m0 3.5v.5"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Боль</h3>
+          <p class="pain__quote">«Три цеха, три договора, ноль ответственности»</p>
+        </div>
+        <div class="pain__arrow"><span></span></div>
+        <div class="pain__block pain__block--fix">
+          <h3 class="pain__good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Решение</h3>
+          <h4>Единый производственный цикл</h4>
+          <p>Мы не посредники. Свой склад, свой лазер, свой листогиб, свой сварочный пост. Вы присылаете чертёж — мы сами проверяем технологичность, подбираем оптимальный лист, кроим, гнём и варим. Не сошлась деталь — это наша проблема.</p>
+          <ul class="pain__list">
+            <li>Один договор, один менеджер</li>
+            <li>Одна точка ответственности</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="pain glass reveal" data-anim="up" data-delay="240" data-spotlight>
+        <div class="pain__num">03</div>
+        <div class="pain__block">
+          <h3 class="pain__bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v5m0 3.5v.5"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Боль</h3>
+          <p class="pain__quote">«Смета была 100 тысяч, счёт пришёл на 130»</p>
+        </div>
+        <div class="pain__arrow"><span></span></div>
+        <div class="pain__block pain__block--fix">
+          <h3 class="pain__good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Решение</h3>
+          <h4>Прозрачный расчёт и фиксация цены</h4>
+          <p>Вы вводите параметры детали и видите стоимость каждого реза и гибки до копеек. Цена фиксируется в момент оплаты счёта и не меняется. Мы не «вспоминаем» про сложность в процессе — всё заложено в алгоритм.</p>
+          <ul class="pain__list">
+            <li>Ошиблись в расчёте — это наша скидка</li>
+            <li>Ноль скрытых платежей за «сложность»</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= METAL STOCK ======================= -->
+<section class="section metal" id="metal">
+  <div class="container">
+    <div class="section__head reveal" data-anim="up">
+      <span class="eyebrow">Склад металла</span>
+      <h2 class="section__title">Не нужно покупать фуру,<br>если нужен один лист. Отрежем в размер.</h2>
+      <p class="section__sub">Прокат в наличии на складе — цена за килограмм и за лист фиксируется на момент оплаты.</p>
+    </div>
+
+    <div class="metal__grid">
+      <div class="metal__card glass reveal" data-anim="up" data-spotlight>
+        <div class="metal__ico">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="3" width="46" height="18" rx="2"/><path d="M8 3v18M16 3v18M24 3v18M32 3v18M40 3v18" opacity=".55"/></svg>
+        </div>
+        <h3>Листовой прокат</h3>
+        <p>Ст3, 09Г2С, AISI 304/430</p>
+        <ul class="ticks">
+          <li>толщина от 1 до 20 мм</li>
+          <li>раскрой по вашим размерам</li>
+          <li>рез в размер с завода-поставщика</li>
+        </ul>
+        <div class="metal__tags">
+          <span>Ст3</span><span>09Г2С</span><span>304</span><span>430</span><span>1–20 мм</span>
+        </div>
+      </div>
+
+      <div class="metal__card glass reveal" data-anim="up" data-delay="120" data-spotlight>
+        <div class="metal__ico">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="8"/><circle cx="9" cy="12" r="3.5"/><rect x="24" y="4" width="20" height="16" rx="2"/><path d="M29 4v16M34 4v16M39 4v16" opacity=".55"/></svg>
+        </div>
+        <h3>Труба</h3>
+        <p>Профильная и круглая</p>
+        <ul class="ticks">
+          <li>квадратная 20×20…100×100</li>
+          <li>прямоугольная 40×20…80×40</li>
+          <li>круглая оцинкованная, ГОСТ 3262</li>
+        </ul>
+        <div class="metal__tags"><span>КВ 40×40</span><span>КВ 50×50</span><span>ПР 40×20</span><span>КР 42</span></div>
+      </div>
+
+      <div class="metal__card glass reveal" data-anim="up" data-delay="240" data-spotlight>
+        <div class="metal__ico">
+          <svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 20 18 4l12 16z"/><path d="M22 20 32 8l10 12" opacity=".55"/></svg>
+        </div>
+        <h3>Сортамент</h3>
+        <p>Уголок и швеллер</p>
+        <ul class="ticks">
+          <li>уголок 25×25…100×100</li>
+          <li>швеллер П/У, ГОСТ 8240</li>
+          <li>двутавр 20Б1 / 30Б1</li>
+        </ul>
+        <div class="metal__tags"><span>У25×25</span><span>У50×50</span><span>П6</span><span>У8</span></div>
+      </div>
+    </div>
+
+    <div class="metal__cta reveal" data-anim="up">
+      <div class="metal__stock">
+        <div class="stock-bar"><span data-count="76"></span></div>
+        <p><b>Остаток ходового листа 3 мм на складе — <span data-count="4.2" data-decimals="1">0</span> т.</b> Биржа растёт, а ваш счёт — нет.</p>
+      </div>
+      <button class="btn btn--primary btn--lg" type="button" data-open-price>
+        Посмотреть остатки металла и цены за кг/лист
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PARTS WAREHOUSE ======================= -->
+<section class="section parts" id="parts">
+  <div class="glass-panel-wrap reveal" data-anim="up">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Склад готовых запчастей</span>
+        <h2 class="section__title">Нужна деталь прямо сейчас?<br>Не ждите 2 дня на резку</h2>
+        <p class="section__sub">На складе лежат готовые ходовые позиции. Добавьте в корзину — отправим сегодня.</p>
+      </div>
+
+      <div class="parts__cats">
+        <div class="parts__cols">
+          <div class="parts__col glass">
+            <h4>Для ворот и роллетов</h4>
+            <ul class="ticks">
+              <li>Ролики направляющие</li>
+              <li>Кронштейны роликовые</li>
+              <li>Зубчатые рейки</li>
+              <li>Заглушки профильные</li>
+            </ul>
+          </div>
+          <div class="parts__col glass">
+            <h4>Для стройки</h4>
+            <ul class="ticks">
+              <li>Площадки под анкеры</li>
+              <li>Фланцы опорные</li>
+              <li>Опорные пластины</li>
+              <li>Уголки монтажные</li>
+            </ul>
+          </div>
+        </div>
+        <div class="parts__note">
+          <b>250+ позиций</b> — вентиляция, стеллажи, ворота, крепёж, водоснабжение.
+        </div>
+      </div>
+
+      <div class="catalog glass" id="catalog">
+        <div class="catalog__bar">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+            <input type="search" id="catalogSearch" placeholder="Поиск: ролик, фланец, рейка, артикул…" autocomplete="off">
+          </div>
+          <div class="chips" id="catalogChips"></div>
+          <div class="catalog__tools">
+            <label class="switch switch--sm">
+              <input type="checkbox" id="catalogStock">
+              <i></i><span>только в наличии</span>
+            </label>
+            <select id="catalogSort" class="select-sm">
+              <option value="pop">по популярности</option>
+              <option value="price-asc">цена: по возрастанию</option>
+              <option value="price-desc">цена: по убыванию</option>
+              <option value="name">по названию</option>
+            </select>
+          </div>
+        </div>
+        <div class="catalog__count"><b data-catalog-count>—</b> позиций показано</div>
+        <div class="catalog__grid" id="catalogGrid"></div>
+      </div>
+
+      <div class="parts__foot reveal" data-anim="up">
+        <button class="btn btn--primary btn--lg" type="button" data-open-price>
+          Перейти в каталог запчастей (250+ позиций)
+        </button>
+        <p class="micro">Наличие обновляется раз в сутки. Любой товар можно зарезервировать на 24 часа.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EQUIPMENT ======================= -->
+<section class="section equip" id="equipment">
+  <div class="container">
+    <div class="section__head reveal" data-anim="up">
+      <span class="eyebrow">Наше оборудование</span>
+      <h2 class="section__title">Мы не обещаем точность —<br>мы её гарантируем паспортами станков</h2>
+      <p class="section__sub">Каждый станок проходит ежемесячную проверку. Паспорт с допусками прикладываем к отгрузке.</p>
+    </div>
+
+    <div class="equip__grid">
+      <article class="eq glass reveal" data-anim="up" data-spotlight data-tilt>
+        <div class="eq__top">
+          <span class="eq__tag">01 / Рез</span>
+          <span class="eq__live"><i></i>в работе</span>
+        </div>
+        <h3>Оптоволоконный лазер 2 кВт</h3>
+        <p>Чистый рез по стали и нержавейке, узкий конус реза и минимальный нагар на кромке.</p>
+        <ul class="ticks">
+          <li>чистый рез до <b>20 мм</b></li>
+          <li>допуск до <b>0,1 мм</b></li>
+          <li>рабочее поле 3000 × 1500 мм</li>
+        </ul>
+        <div class="eq__meter"><span style="--w:92%"></span></div>
+        <div class="eq__foot">Загрузка сегодня <b>92%</b></div>
+      </article>
+
+      <article class="eq glass reveal" data-anim="up" data-delay="120" data-spotlight data-tilt>
+        <div class="eq__top">
+          <span class="eq__tag">02 / Гибка</span>
+          <span class="eq__live"><i></i>в работе</span>
+        </div>
+        <h3>Листогибочный пресс 100 тонн</h3>
+        <p>Гибаем по штучной оснастке — угол ровно 90°, без эффекта «домика» на длинных деталях.</p>
+        <ul class="ticks">
+          <li>длина гиба до <b>3 метров</b></li>
+          <li>угол <b>90°</b> без эффекта «домика»</li>
+          <li>оснастка под ваш радиус R</li>
+        </ul>
+        <div class="eq__meter"><span style="--w:74%"></span></div>
+        <div class="eq__foot">Загрузка сегодня <b>74%</b></div>
+      </article>
+
+      <article class="eq glass reveal" data-anim="up" data-delay="240" data-spotlight data-tilt>
+        <div class="eq__top">
+          <span class="eq__tag">03 / Толстая сталь</span>
+          <span class="eq__live eq__live--idle"><i></i>смена</span>
+        </div>
+        <h3>Плазма Hypertherm</h3>
+        <p>Скоростная резка чёрного металла там, где лазер уже неэкономичен.</p>
+        <ul class="ticks">
+          <li>чёрный металл до <b>30 мм</b></li>
+          <li>скорость до <b>3,8 м/мин</b></li>
+          <li>для рам, обечаек, фланцев</li>
+        </ul>
+        <div class="eq__meter"><span style="--w:51%"></span></div>
+        <div class="eq__foot">Загрузка сегодня <b>51%</b></div>
+      </article>
+
+      <article class="eq glass reveal" data-anim="up" data-delay="360" data-spotlight data-tilt>
+        <div class="eq__top">
+          <span class="eq__tag">04 / Сварка</span>
+          <span class="eq__live"><i></i>в работе</span>
+        </div>
+        <h3>MIG/MAG и TIG</h3>
+        <p>Сварка ответственных конструкций с заполнением раковины и защитным газом.</p>
+        <ul class="ticks">
+          <li>полуавтомат 300–500 А</li>
+          <li>TIG для нержавейки и алюминия</li>
+          <li>швы по аттестованной технологии</li>
+        </ul>
+        <div class="eq__meter"><span style="--w:66%"></span></div>
+        <div class="eq__foot">Загрузка сегодня <b>66%</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROCESS ======================= -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section__head reveal" data-anim="up">
+      <span class="eyebrow">Как работаем</span>
+      <h2 class="section__title">От расчёта до отгрузки — 4 шага, два дня</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step glass reveal" data-anim="up" data-delay="0" data-spotlight>
+        <div class="step__n">1</div>
+        <h3>Считаете в калькуляторе</h3>
+        <p>Вводите параметры детали и получаете PDF со сметой на почту. Цена в смете — финальная.</p>
+        <span class="step__time">1 минута</span>
+      </li>
+      <li class="step glass reveal" data-anim="up" data-delay="110" data-spotlight>
+        <div class="step__n">2</div>
+        <h3>Присылаете чертёж</h3>
+        <p>Инженер проверяет деталь на технологичность за 15 минут и подсказывает, как удешевить.</p>
+        <span class="step__time">до 15 минут</span>
+      </li>
+      <li class="step glass reveal" data-anim="up" data-delay="220" data-spotlight>
+        <div class="step__n">3</div>
+        <h3>Оплачиваете счёт</h3>
+        <p>Цена фиксируется. Мы прикладываем карту раскроя — вы видите, как ляжет деталь на лист.</p>
+        <span class="step__time">в момент оплаты</span>
+      </li>
+      <li class="step glass reveal" data-anim="up" data-delay="330" data-spotlight>
+        <div class="step__n">4</div>
+        <h3>Отгружаем через 2 дня</h3>
+        <p>Своим транспортом по городу или любой ТК по РФ с жёсткой обрешёткой и паллетированием.</p>
+        <span class="step__time">48 часов</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= REVIEWS ======================= -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section__head reveal" data-anim="up">
+      <span class="eyebrow">Социальное доказательство</span>
+      <h2 class="section__title">Что говорят те, кто уже сэкономил нервы и дни</h2>
+    </div>
+
+    <div class="reviews__grid">
+      <figure class="rev glass reveal" data-anim="up" data-spotlight>
+        <div class="rev__stars">★★★★★</div>
+        <blockquote>«Горел госконтракт, другие цеха давали срок 2 недели. Здесь в работу взяли в день звонка, через 48 часов кронштейны уже стояли на объекте».<i class="rev__marks" data-parallax="0.05"></i></blockquote>
+        <figcaption>
+          <i class="rev__ava">И</i>
+          <span><b>Иван</b>начальник производства вентиляционных систем</span>
+        </figcaption>
+      </figure>
+
+      <figure class="rev glass reveal" data-anim="up" data-delay="130" data-spotlight>
+        <div class="rev__stars">★★★★★</div>
+        <blockquote>«Нужна была одна пластина. Ввёл размеры в калькулятор, оплатил картой. Через день забрал в пункте выдачи. Не пришлось покупать целый лист».<i class="rev__marks" data-parallax="0.05"></i></blockquote>
+        <figcaption>
+          <i class="rev__ava">С</i>
+          <span><b>Сергей</b>частный мастер</span>
+        </figcaption>
+      </figure>
+
+      <div class="rev__kpi glass reveal" data-anim="up" data-delay="260">
+        <div class="kpi"><b data-count="1800" data-suffix="+">0</b><span>отгруженных заказов</span></div>
+        <div class="kpi"><b data-count="96" data-suffix="%">0</b><span>сдано с первого раза</span></div>
+        <div class="kpi"><b data-count="15" data-suffix=" мин">0</b><span>ответ инженера</span></div>
+        <p>Гарантия: если деталь не сошлась — переделаем за свой счёт или вернём деньги.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section faq" id="faq">
+  <div class="container faq__grid">
+    <div class="faq__head reveal" data-anim="up">
+      <span class="eyebrow">Частые вопросы</span>
+      <h2 class="section__title">Коротко о главном</h2>
+      <p class="section__sub">Не нашли ответ — напишите инженеру, ответим за 3 минуты в рабочее время.</p>
+      <button class="btn btn--ghost js-callback" type="button">Задать вопрос инженеру</button>
+    </div>
+
+    <div class="acc" id="faqAcc">
+      <div class="acc__item glass reveal" data-anim="up">
+        <button type="button" class="acc__btn">Что если цена в калькуляторе не совпадёт с итоговым счётом?<i></i></button>
+        <div class="acc__body"><p>Не совпадёт — значит ошиблись мы. Цена фиксируется в момент оплаты, алгоритм учитывает материал, рез, гибы и наладку. Если мы ошиблись в расчёте, это наша скидка: доплачивать разницу вы не будете.</p></div>
+      </div>
+      <div class="acc__item glass reveal" data-anim="up" data-delay="80">
+        <button type="button" class="acc__btn">Работаете с нестандартными размерами и малыми партиями?<i></i></button>
+        <div class="acc__body"><p>Да. Минимальная партия — 1 деталь. Для редких позиций подберём оптимальный лист со склада или предложим эквивалент по цене.</p></div>
+      </div>
+      <div class="acc__item glass reveal" data-anim="up" data-delay="160">
+        <button type="button" class="acc__btn">Вы принимаете чертежи, и что с конфиденциальностью?<i></i></button>
+        <div class="acc__body"><p>Принимаем .dxf, .dwg, .pdf, .step. Файлы хранятся в закрытом контуре, передаём только своему инженеру-технологу и удаляем через 90 дней. NDA подписываем по запросу.</p></div>
+      </div>
+      <div class="acc__item glass reveal" data-anim="up" data-delay="240">
+        <button type="button" class="acc__btn">Как быстро отгружаете и кто везёт?<i></i></button>
+        <div class="acc__body"><p>Стандарт — 2 рабочих дня с момента оплаты. По Москве и области — свой транспорт с выгрузкой. По РФ — любой ТК, жёсткая обрешётка, фото упаковки до отправки.</p></div>
+      </div>
+      <div class="acc__item glass reveal" data-anim="up" data-delay="320">
+        <button type="button" class="acc__btn">Можно ли купить металл без обработки?<i></i></button>
+        <div class="acc__body"><p>Да. Продаём прокат с доставкой и резом в размер по вашим размерам — даже если деталей из него делать не нужно.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FINAL CTA ======================= -->
+<section class="section final" id="cta">
+  <div class="container">
+    <div class="final__box glass reveal" data-anim="up">
+      <div class="final__glow" data-parallax="0.08"></div>
+      <div class="final__left">
+        <span class="eyebrow">Осталось одно действие</span>
+        <h2 class="final__title">Зафиксируйте цену на металл<br>до конца недели</h2>
+        <p>Остаток ходового листа <b>3 мм на складе: 4,2 тонны</b>. Биржа растёт, но ваш счёт — нет.</p>
+        <ul class="final__list">
+          <li>Ваши чертежи защищены — NDA и закрытый контур</li>
+          <li>Расчёт не обязывает к заказу</li>
+          <li>Мы не рассылаем спам: один звонок, один ответ</li>
+          <li>Если цена устроит — просто оплатите приложённый счёт</li>
+        </ul>
+      </div>
+
+      <div class="final__right">
+        <div class="final__price">
+          <span>Лист 3 мм, Ст3</span>
+          <b data-count="76" data-prefix="от " data-suffix=" ₽/кг">0</b>
+          <em>зафиксировано до воскресенья</em>
+        </div>
+        <div class="final__btns">
+          <a class="btn btn--primary btn--lg btn--block" href="#calculator">Открыть калькулятор и получить PDF-смету</a>
+          <button class="btn btn--glass btn--lg btn--block" type="button" data-open-price>Проверить наличие на складе запчастей</button>
+          <button class="btn btn--ghost btn--lg btn--block js-callback" type="button">Заказать обратный звонок инженера</button>
+        </div>
+        <form class="form form--cta" id="ctaForm" novalidate>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Имя</span>
+              <input type="text" name="name" required placeholder="Иван" autocomplete="name">
+              <small class="err"></small>
+            </label>
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" data-mask="phone" autocomplete="tel">
+              <small class="err"></small>
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Что нужно</span>
+            <select name="topic">
+              <option>Лазерный рез по чертежу</option>
+              <option>Гибка деталей</option>
+              <option>Готовые запчасти со склада</option>
+              <option>Закупка металла / рез в размер</option>
+              <option>Сварочные работы</option>
+              <option>Другое</option>
+            </select>
+          </label>
+          <button class="btn btn--primary btn--lg btn--block" type="submit">Зафиксировать цену и получить звонок</button>
+          <p class="micro">Отвечаем за 3 минуты в рабочее время. Никакого спама.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="ps reveal" data-anim="up">
+      <b>P.S.</b> Не хотите пользоваться калькулятором? Пришлите спецификацию или эскиз на
+      <a href="mailto:zakaz@metall-obrabotka.ru">zakaz@metall-obrabotka.ru</a> или в WhatsApp
+      <a href="https://wa.me/74951204567" data-wa>+7 (495) 120-45-67</a>. Сделаем ручной расчёт за 30 минут.
+      Но в калькуляторе вы увидите цену прямо сейчас.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="logo" href="#top">
+        <span class="logo__mark"><i></i><i></i><i></i></span>
+        <span class="logo__text">Металл<b>Обработка</b><em>· цех и склад</em></span>
+      </a>
+      <p class="footer__about">Собственный склад проката, лазер 2 кВт, листогиб 100 т, сварочный пост. Режем, гнём и варим по чертежам с 2013 года.</p>
+    </div>
+    <div>
+      <h5>Производство</h5>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#equipment">Оборудование</a>
+      <a href="#process">Как работаем</a>
+    </div>
+    <div>
+      <h5>Склад</h5>
+      <a href="#metal">Прокат в наличии</a>
+      <a href="#parts">Готовые запчасти</a>
+      <button type="button" class="linkish" data-open-price>Цены за кг/лист</button>
+    </div>
+    <div>
+      <h5>Контакты</h5>
+      <a href="tel:+74951204567">+7 (495) 120-45-67</a>
+      <a href="mailto:zakaz@metall-obrabotka.ru">zakaz@metall-obrabotka.ru</a>
+      <span>Москва, Проектируемый пр-д 4062, стр. 6</span>
+      <span>Пн–Пт 8:00–20:00 · Сб 9:00–15:00</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> МеталлОбработка. Цены на сайте не являются публичной офертой.</span>
+    <div class="footer__docs"><a href="#">Политика конфиденциальности</a><a href="#">Договор</a><a href="#">Реквизиты</a></div>
+  </div>
+</footer>
+
+<!-- ======================= MOBILE CTA ======================= -->
+<div class="mcta" id="mcta">
+  <a class="btn btn--primary" href="#calculator">Калькулятор</a>
+  <a class="btn btn--glass" href="tel:+74951204567">Позвонить</a>
+</div>
+
+<!-- ======================= MODALS ======================= -->
+<div class="modal" id="formModal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box glass" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
+    <button class="modal__x" type="button" data-close aria-label="Закрыть">✕</button>
+    <h3 id="formModalTitle">Обратный звонок инженера</h3>
+    <p class="modal__sub">Ответим за 3 минуты в рабочее время. Только по делу — без спама.</p>
+    <form class="form" id="modalForm" novalidate>
+      <input type="hidden" name="form" value="callback">
+      <label class="field">
+        <span class="field__label">Имя</span>
+        <input type="text" name="name" required placeholder="Как к вам обращаться" autocomplete="name">
+        <small class="err"></small>
+      </label>
+      <label class="field">
+        <span class="field__label">Телефон</span>
+        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" data-mask="phone" autocomplete="tel">
+        <small class="err"></small>
+      </label>
+      <label class="field">
+        <span class="field__label">Комментарий <small>(необязательно)</small></span>
+        <textarea name="message" rows="3" placeholder="Например: нужен кронштейн 400×200×6 из 09Г2С, 20 шт"></textarea>
+      </label>
+      <button class="btn btn--primary btn--lg btn--block" type="submit">Жду звонка</button>
+      <p class="micro">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="priceModal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box modal__box--wide glass" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
+    <button class="modal__x" type="button" data-close aria-label="Закрыть">✕</button>
+    <h3 id="priceModalTitle">Склад металла: остатки и цены</h3>
+    <p class="modal__sub">Цены зафиксированы на сегодня. Наличие обновляется раз в сутки.</p>
+    <div class="ptabs" id="priceTabs">
+      <button class="ptab is-active" type="button" data-tab="sheet">Листовой прокат</button>
+      <button class="ptab" type="button" data-tab="tube">Труба</button>
+      <button class="ptab" type="button" data-tab="sort">Сортамент</button>
+    </div>
+    <div class="ptable-wrap">
+      <table class="ptable">
+        <thead><tr><th>Позиция</th><th>Толщина / размер</th><th>Цена за кг</th><th>Остаток</th><th></th></tr></thead>
+        <tbody id="priceBody"></tbody>
+      </table>
+    </div>
+    <div class="modal__foot">
+      <p class="micro">Нужного размера нет в таблице? Позвоните — привезём под заказ за 3–5 дней или предложим ближайший эквивалент в наличии.</p>
+      <div class="modal__foot-btns">
+        <button class="btn btn--ghost js-callback" type="button" data-close>Заказать звонком</button>
+        <a class="btn btn--primary" href="#calculator" data-close>Рассчитать деталь</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= CART DRAWER ======================= -->
+<div class="drawer" id="cartDrawer" hidden>
+  <div class="drawer__backdrop" data-close-cart></div>
+  <aside class="drawer__box" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <header class="drawer__head">
+      <h3 id="cartTitle">Корзина запчастей</h3>
+      <button class="modal__x" type="button" data-close-cart aria-label="Закрыть">✕</button>
+    </header>
+    <div class="drawer__body" id="cartBody"></div>
+    <footer class="drawer__foot">
+      <div class="drawer__total"><span>Итого</span><b id="cartTotal">0 ₽</b></div>
+      <p class="micro">Резерв на 24 часа. Отправим сегодня своим транспортом по городу или ТК по РФ.</p>
+      <form class="form" id="cartForm" novalidate>
+        <input type="hidden" name="form" value="order">
+        <div class="form__row">
+          <label class="field">
+            <span class="field__label">Имя</span>
+            <input type="text" name="name" required placeholder="Иван" autocomplete="name">
+            <small class="err"></small>
+          </label>
+          <label class="field">
+            <span class="field__label">Телефон</span>
+            <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" data-mask="phone" autocomplete="tel">
+            <small class="err"></small>
+          </label>
+        </div>
+        <label class="field">
+          <span class="field__label">Куда отгрузить</span>
+          <input type="text" name="address" placeholder="Город, адрес или номер ТК" autocomplete="street-address">
+        </label>
+        <button class="btn btn--primary btn--lg btn--block" type="submit">Оформить заказ</button>
+      </form>
+    </footer>
+  </aside>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

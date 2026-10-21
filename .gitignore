@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# temp
+*.log
+
+# рабочие брифы и ТЗ — в публичный репозиторий не выкладываются
+*.doc
